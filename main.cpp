@@ -23,7 +23,7 @@ protected:
 
     // Inherited helper function to check for duplicate characters
     bool hasUniqueCharacters(const std::string& str) const {
-        for (size_t i = 0; i < str.length(); ++i) { // < was changed to <= to check somthing. change back afterwords.
+        for (size_t i = 0; i < str.length(); ++i) { //
             for (size_t j = i + 1; j < str.length(); ++j) {
                 if (str[i] == str[j]) return false;
             }
@@ -36,7 +36,7 @@ protected:
         int red = 0;
         int white = 0;
 
-        for (int i = 0; i < m_codeLength; ++i) {// < was changed to <= to check somthing. change back afterwords.
+        for (int i = 0; i < m_codeLength; ++i) {
             if (guess[i] == m_secretCode[i]) {
                 red++;
                 m_correct[i] = m_secretCode[i];
@@ -61,6 +61,7 @@ public:
     // Inherited method for controlling the main game flow
     void play() {
         // call to generate a secret code
+        generateSecretCode();
 
         std::cout << "\n--- Starting Game ---\n";
         std::cout << getGameModeRules() << "\n";
